@@ -111,10 +111,11 @@ type Phase = 'intro' | 'play' | 'result'
 
 function Sheet({ cart, onStart, onDone, onClose }: { cart: number; onStart: () => void; onDone: (rung: number) => void; onClose: () => void }) {
   const [open, setOpen] = useState(false)
-  const [phase, setPhase] = useState<Phase>('intro')
+  const GM = new URLSearchParams(location.search).get('gm') // TEMP-DEBUG
+  const [phase, setPhase] = useState<Phase>(GM === 'won' || GM === 'lost' ? 'result' : GM === 'count' ? 'play' : 'intro')
   const [count, setCount] = useState(3)
   const [score, setScore] = useState(0)
-  const [final, setFinal] = useState(0)
+  const [final, setFinal] = useState(GM === 'won' ? 12 : GM === 'lost' ? 6 : 0)
   const cv = useRef<HTMLCanvasElement>(null)
   const bar = useRef<HTMLDivElement>(null)
   const clock = useRef<HTMLSpanElement>(null)
@@ -131,7 +132,7 @@ function Sheet({ cart, onStart, onDone, onClose }: { cart: number; onStart: () =
 
   // 3, 2, 1 before the drops start
   useEffect(() => {
-    if (phase !== 'play' || count <= 0) return
+    if (phase !== 'play' || count <= 0 || GM === 'count') return // TEMP-DEBUG
     const t = setTimeout(() => setCount(c => c - 1), 650)
     return () => clearTimeout(t)
   }, [phase, count])
@@ -322,7 +323,7 @@ export default function DropsCard() {
   const v = useCart().value
   const [played, setPlayed] = useState(false)   // unlimited tries: after the first round the button reads "Try again"
   const [best, setBest] = useState(0)
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(() => new URLSearchParams(location.search).get('gm') != null) // TEMP-DEBUG
   const top = GAME_TIERS[GAME_TIERS.length - 1].n   // the biggest prize
   return (
     <div className="dc">

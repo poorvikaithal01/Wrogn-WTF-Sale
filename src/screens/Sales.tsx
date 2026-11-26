@@ -5,6 +5,7 @@ import { BACK_ARROW } from '../figma/svgs'
 import { BANNERS_LP, FILTERS, PCT, PRODUCTS, SALE_END } from '../data/sales'
 import { BdeHead, PctCard, ProductCard } from './SalesCards'
 import BlacklistBanner from './Blacklist'
+import DropsCard from './DropsGame'
 import { useCart } from './cartState'
 import { useOpenCart } from './useOpenCart'
 import './sales.css'
@@ -89,6 +90,8 @@ export default function Sales() {
           <section className="s-strip">
             <div className="s-row">{PCT.map(c => <PctCard key={c.line} line={c.line} creative={c.creative} art={c.art} note="112 × 76" wide />)}</div>
           </section>
+
+          <section className="s-game"><DropsCard /></section>
 
           <BlacklistBanner />
 
