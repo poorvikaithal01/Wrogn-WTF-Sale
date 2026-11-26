@@ -1,0 +1,27 @@
+/* Sale widget: 70.4x73.6 centre slot of the bottom nav; every class prefixed sw- */
+.sw{position:relative;display:block;width:70.4px;height:73.6px;padding:0;border:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent;perspective:200px}
+.sw-back,.sw-card{position:absolute;left:3.2px;top:-2.8px;width:57.6px;height:67.2px;border-radius:4px}
+.sw-back{background:#141414;box-shadow:inset 0 0 0 1px rgba(245,0,87,.55),0 3px 8px rgba(0,0,0,.3);transform:rotate(9deg) translate(7px,-3px)}
+.sw-card{background:linear-gradient(165deg,#F50057,#DD0052);box-shadow:0 4px 10px rgba(0,0,0,.45);overflow:hidden;display:flex;flex-direction:column;align-items:center}
+.sw-card::after{content:"";position:absolute;inset:3px;border:1px solid rgba(255,255,255,.28);border-radius:2px;pointer-events:none}
+.sw-tag{align-self:stretch;height:14px;background:#FFE500;color:#121212;font:800 8px/14px var(--f-source-sans-3);letter-spacing:.18em;text-align:center}
+.sw-offer{flex:1;align-self:stretch;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#fff;padding:4px 4px 7px}
+.sw-offer i{font:600 8px/1 var(--f-source-sans-3);font-style:normal;letter-spacing:.18em;color:#fff}
+.sw-offer b{font:700 19px/1 var(--f-source-sans-3);letter-spacing:-.01em;white-space:nowrap;color:#fff}
+.sw-offer em{margin-top:2px;font:600 8px/1 var(--f-source-sans-3);font-style:normal;letter-spacing:.08em;color:#fff;white-space:nowrap}
+.sw-offer em.l{font-size:7px;letter-spacing:.03em}
+.sw-go{position:absolute;left:0;right:0;top:70px;display:flex;justify-content:center;color:#F50057;animation:sw-nudge 1.4s ease-in-out infinite}
+@keyframes sw-nudge{0%,100%{transform:translateX(-2px)}50%{transform:translateX(3px)}}
+.sw-shine{position:absolute;top:0;bottom:0;width:16px;left:-24px;background:linear-gradient(100deg,transparent,rgba(255,255,255,.18),transparent);transform:skewX(-18deg);animation:sw-shine 3.6s ease-in-out infinite;pointer-events:none}
+@keyframes sw-shine{0%,55%{left:-24px}85%,100%{left:70px}}
+
+/* intro: only BLACK / FRIDAY / SALE inside the card, each word settling in one after another; then it fades away and the tag + offers take over */
+.sw-tag,.sw-card::after{transition:opacity .35s ease .1s}
+.sw-card.intro .sw-tag,.sw-card.intro::after,.sw-card.intro .sw-shine{opacity:0}
+.sw-title{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px}
+.sw-title strong{display:block;font:800 26px/.95 var(--f-source-sans-3);letter-spacing:-.03em;color:#fff;opacity:0;animation:sw-slam .4s cubic-bezier(.2,.9,.3,1.1) .25s forwards}
+.sw-title strong.f{font-style:italic;color:#F50057;animation-delay:.55s}
+.sw-title small{margin-top:6px;font:600 9px/1 var(--f-source-sans-3);letter-spacing:.5em;padding-left:.5em;color:#FFE500;opacity:0;animation:sw-slam .4s cubic-bezier(.2,.9,.3,1.1) .85s forwards}
+@keyframes sw-slam{0%{opacity:0;transform:scale(1.7) translateY(-6px)}100%{opacity:1;transform:none}}
+.sw-title.out{transition:transform .35s ease,opacity .35s ease;transform:scale(1.15);opacity:0}
+@media (prefers-reduced-motion:reduce){.sw-title strong,.sw-title small{animation:none;opacity:1}}

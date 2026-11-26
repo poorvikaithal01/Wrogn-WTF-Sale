@@ -1,0 +1,22 @@
+/* Sale hero (homepage, sales mode). Prefix sh-. Reuses .hv-logo from the home screen. */
+.sh-scroll{position:absolute;left:0;top:0;width:360px;bottom:calc(67px + var(--sab,0px));overflow-y:auto;overflow-x:hidden;scrollbar-width:none;background:#0a0a0a}
+.sh-scroll::-webkit-scrollbar{display:none}
+.sh-hero{position:relative;cursor:pointer;height:calc(100% - 16px);min-height:520px;overflow:hidden;background:#e11c5d}
+.sh-next{background:#0a0a0a;padding-bottom:16px;overflow:hidden}
+.sh-wide{display:block;width:360px;height:auto;margin-top:-52px}
+.sh-more{margin-top:2px}
+.sh-dull{filter:saturate(.68) brightness(.82);margin-top:0;height:640px;object-fit:cover;object-position:50% 40%}
+.sh-pair{display:flex;gap:2px;margin-top:2px}
+.sh-pair img{flex:1;min-width:0;height:260px;object-fit:cover;object-position:50% 18%}
+.sh-bg{position:absolute;inset:0;background-color:transparent;background-repeat:no-repeat;background-size:cover;background-position:50% 0;}
+.sh-film{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s}
+.sh-film.on{opacity:1}
+.sh-fade{position:absolute;left:0;right:0;bottom:-32px;height:58%;background:linear-gradient(180deg,rgba(14,7,8,0),rgba(14,7,8,.75) 30%,rgba(14,7,8,.96) 48%,#0e0708 56%,#0e0708);pointer-events:none}
+.sh-lock{position:absolute;left:0;right:0;bottom:69px;display:flex;flex-direction:column;align-items:center}
+.sh-lock b{display:block;font:900 40px/.9 var(--f-source-sans-3);letter-spacing:-.025em;text-transform:uppercase}
+.sh-black{color:#fff;text-shadow:0 4px 18px rgba(0,0,0,.45)}
+.sh-friday{position:relative;color:#8a264c;transform:skewX(-6deg)}
+.sh-friday::before{content:"";position:absolute;height:2px;background:#8a264c;transform:rotate(-8deg)}
+.sh-friday::before{left:-20px;right:64%;bottom:-4px;opacity:.9}
+.sh-sale{margin-top:8px;font:500 12px/1 var(--f-source-sans-3);letter-spacing:.7em;padding-left:.7em;color:#fff}
+.sh-lock p{margin:14px 0 0;font:600 10px/1 var(--f-source-sans-3);letter-spacing:.2em;color:rgba(255,255,255,.8)}

@@ -1,0 +1,160 @@
+/* Catch the Drops: section card (dc-) and bottom sheet game (gm-). Sits inside .sales. */
+.dc{margin:0 16px}
+.dc-play{position:relative;display:flex;flex-direction:column;padding:18px 16px 16px;border-radius:4px;overflow:hidden;background:radial-gradient(70% 90% at 95% 10%,rgba(245,0,87,.22),transparent 70%),linear-gradient(165deg,rgba(138,38,76,.3),rgba(20,6,13,.92));border:1px solid rgba(255,255,255,.14)}
+.dc-art{position:absolute;right:10px;top:10px;width:62px;height:auto;pointer-events:none}
+.dc-play>small{font:700 9px/1 var(--f-source-sans-3);letter-spacing:.24em;color:#f50057}
+.sales .dc-play h3{margin:8px 0 0;font:700 22px/1.05 var(--font-display);text-transform:uppercase;letter-spacing:-.01em;color:#fff;white-space:nowrap}
+.dc-play h3 i{color:#F50057}
+.sales .dc-play h3{font-variant-numeric:lining-nums}
+.sales .dc-play p{margin:4px 0 0;font:400 10px/1.2 var(--f-source-sans-3);letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.dc-pill{display:flex;align-items:center;gap:10px;margin-top:26px;padding:12px 10px;border-radius:4px;background:rgba(255,255,255,.045)}
+.dc-pill i{width:1px;height:34px;background:rgba(255,255,255,.16)}
+.dc-pill span{display:flex;flex-direction:column;gap:4px}
+.dc-pill em{font:400 13px/1.15 var(--f-source-sans-3);font-style:normal;color:#fff}
+.dc-pill small{font:400 12px/1.25 var(--f-source-sans-3);color:#bdbdc2}
+.dc-pill small b{font-weight:700;color:#fff}
+.dc-pill em b{font-weight:700;color:#f50057}
+.sales .dc-btn{display:block;width:100%;height:46px;margin-top:12px;border-radius:4px;background:#fff;color:#111;font:700 12px/1 var(--f-source-sans-3);letter-spacing:.16em;text-transform:uppercase}
+.sales .dc-btn:disabled{background:rgba(255,255,255,.12);color:#9a9aa0;cursor:default}
+
+/* bottom sheet */
+.gm-ov{position:absolute;inset:0;z-index:90;background:rgba(0,0,0,0);transition:background .35s ease;display:flex;align-items:flex-end}
+.gm-ov.open{background:rgba(0,0,0,.62)}
+.gm-sheet{position:relative;width:100%;max-height:94%;box-sizing:border-box;overflow:hidden;padding:10px 16px calc(18px + var(--sab,0px));border-radius:4px 4px 0 0;border-top:1px solid rgba(255,255,255,.16);
+  background:radial-gradient(90% 38% at 50% 0%,rgba(138,38,76,.34),transparent 70%),#111113;color:#fff;text-align:center;transform:translateY(100%);transition:transform .42s cubic-bezier(.2,.8,.2,1)}
+.gm-ov.open .gm-sheet{transform:none}
+.gm-grab{display:block;width:34px;height:3px;border-radius:2px;margin:0 auto 14px;background:rgba(255,255,255,.28)}
+.sales .gm-x{position:absolute;right:12px;top:12px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;border-radius:4px;background:#212121}
+.gm-eye{display:block;font:700 9px/1 var(--f-source-sans-3);letter-spacing:.26em;padding-left:.26em;color:#f50057;margin-bottom:12px}
+.gm-sheet .bd-head{margin-bottom:6px}
+.gm-sheet .bd-div{margin-top:10px}
+.gm-lead{margin:10px 8px 0;font:400 13px/1.4 var(--f-source-sans-3);color:#cfcfd4}
+.gm-lead b{font-weight:600;color:#fff}
+.gm-lead.top b{color:#f50057}
+.gm-legend{display:flex;margin:16px 0 0}
+.gm-legend>div{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:2px 0 0}
+.gm-legend>div+div{border-left:1px solid rgba(255,255,255,.12)}
+.gm-legend b{font:700 13px/1 var(--f-source-sans-3);color:#fff}
+.gm-legend .bad b{color:#f50057}
+.gm-ico{width:44px;height:40px}
+.gm-ladder small{display:block;margin-bottom:8px;font:700 9px/1 var(--f-source-sans-3);letter-spacing:.24em;padding-left:.24em;color:var(--dim)}
+.gm-ladder{text-align:left;margin-top:34px}
+.gm-ladder small{text-align:center}
+.gm-ladder>div{display:flex;align-items:baseline;padding:3px 4px}
+.gm-ladder .w{flex:0 0 84px;font:400 12px/1 var(--f-source-sans-3);color:#7a7a80}
+.gm-ladder .w b{font:600 14px/1 var(--f-source-sans-3);color:#bdbdc2;margin:0 1px}
+.gm-ladder .g{flex:1;font:400 12px/1.2 var(--f-source-sans-3);color:#9a9aa0}
+.gm-ladder .g b{font:400 13px/1 var(--f-source-sans-3);color:#fff}
+.gm-ladder .g em{font-style:normal;font-size:11px;margin-left:6px;color:#6e6e74}
+.sales .gm-btn{display:block;width:100%;height:46px;margin-top:16px;border-radius:var(--r);background:#fff;border:0;color:#111;font:700 12px/1 var(--f-source-sans-3);letter-spacing:.18em;text-transform:uppercase}
+.sales .gm-btn.ghost{margin-top:10px;background:none;border:1px solid rgba(255,255,255,.3);color:#fff}
+.sales .gm-foot{margin-top:6px;font:400 11px/1.3 var(--f-source-sans-3);color:var(--dim)}
+
+/* play */
+.gm-hud{display:flex;align-items:flex-end;justify-content:space-between;text-align:left;margin-bottom:8px}
+.gm-hud small{display:block;font:700 9px/1 var(--f-source-sans-3);letter-spacing:.22em;color:var(--dim);margin-bottom:5px}
+.gm-hud b{font:700 30px/1 var(--f-source-sans-3);font-variant-numeric:tabular-nums}
+.sales .gm-hint{margin:10px 0 0;text-align:center;font:400 11px/1 var(--f-source-sans-3);color:var(--dim)}
+.gm-clock{text-align:right}
+.gm-clock span{font:700 20px/1 var(--f-source-sans-3);font-variant-numeric:tabular-nums}
+.gm-time{height:3px;border-radius:2px;background:rgba(255,255,255,.12);overflow:hidden;margin-bottom:10px}
+.gm-time div{height:100%;background:#f50057;transform-origin:0 50%}
+.gm-field{position:relative;width:328px;height:340px;margin:0 auto;border-radius:var(--r);overflow:hidden;border:1px solid rgba(255,255,255,.14);
+  background:radial-gradient(100% 50% at 50% 0%,rgba(138,38,76,.4),transparent 70%),repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 1px,transparent 1px 41px),#0b0b0c}
+.gm-field canvas{display:block;width:328px;height:340px;touch-action:none;cursor:grab}
+.gm-count{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:italic 700 96px/1 var(--font-display);color:#fff;background:rgba(0,0,0,.45);animation:gm-pop .65s ease both;pointer-events:none}
+@keyframes gm-pop{from{transform:scale(1.4);opacity:0}30%{opacity:1}to{transform:scale(.9);opacity:.9}}
+
+/* result */
+.gm-score{font:italic 700 72px/1 var(--font-display);margin:4px 0 0;color:#fff}
+.sales .gm-yours{margin:6px 0 18px;font:400 13px/1 var(--f-source-sans-3);color:#9a9aa0}
+.gm-prize{display:flex;flex-direction:column;align-items:center;gap:7px;padding:16px 10px;border-radius:var(--r);background:linear-gradient(165deg,#8a264c,#561830);border:1px solid rgba(255,255,255,.28);box-shadow:0 14px 28px rgba(0,0,0,.45)}
+.gm-prize.none{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.14);box-shadow:none}
+.gm-prize small{font:700 9px/1 var(--f-source-sans-3);letter-spacing:.26em;padding-left:.26em;color:#f1c9d8}
+.gm-prize b{font:700 40px/1 var(--f-source-sans-3);letter-spacing:-.01em;text-transform:uppercase}
+.gm-prize b i{font:500 15px/1 var(--f-source-sans-3);font-style:normal;letter-spacing:.14em;margin-left:4px}
+.gm-prize b.sm{font-size:17px;letter-spacing:0;text-transform:none}
+.gm-prize b.sm u{text-decoration:none;color:#f50057}
+.gm-prize span{font:400 12px/1 var(--f-source-sans-3);color:rgba(255,255,255,.8)}
+.sales .gm-note{margin:12px 0 0;font:400 12px/1.3 var(--f-source-sans-3);color:#9a9aa0}
+
+/* the scoring icons carry the soft panel; score to win stays plain */
+.gm-legend{padding:12px 0 10px;border-radius:4px;background:linear-gradient(135deg,rgba(138,38,76,.3) 0%,rgba(14,8,10,.92) 62%,rgba(8,6,7,.95) 100%);border:1px solid rgba(255,255,255,.1)}
+.gm-legend{margin-top:30px}
+/* result screen: stronger red glow at the top, like the reference */
+.gm-sheet.res{background:radial-gradient(95% 50% at 50% 0%,rgba(150,38,81,.5),transparent 72%),#111113}
+.sales .gm-sheet.res .gm-lead{margin:16px 0 0}
+/* no attempts left: a quiet pill with a lock */
+
+/* win screen */
+.gm-win{display:flex;flex-direction:column;align-items:center}
+.gm-win .bd-head.inline h2{font-size:22px}
+.gm-win .bd-head.inline h2 i{font-size:25px}
+.gm-win .bd-head{margin-bottom:0}
+.gm-win-art{width:200px;height:auto;margin-top:6px;animation:gm-art .5s cubic-bezier(.2,.9,.3,1.2) both}
+@keyframes gm-art{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:none}}
+.sales .gm-won{margin:2px 0 0;font:700 32px/1.1 var(--font-display);color:#fff}
+.sales .gm-cong{margin:8px 0 0;font:400 13px/1.3 var(--f-source-sans-3);color:#cfcfd4}
+.gm-tk{position:relative;display:flex;align-items:center;width:100%;margin-top:18px;padding:14px 14px 14px 22px;border-radius:4px;box-sizing:border-box;text-align:left;
+  background:linear-gradient(135deg,rgba(150,40,82,.45),rgba(30,10,14,.75));border:1px solid rgba(245,0,87,.22)}
+.gm-tk::before{content:"";position:absolute;left:10px;top:8px;bottom:8px;border-left:1px dashed rgba(255,255,255,.22)}
+.gm-tk-l{flex:0 0 auto;display:flex;flex-direction:column;gap:7px;padding-right:14px}
+.gm-tk em{display:flex;align-items:baseline;gap:5px;font-style:normal}
+.gm-tk em b{font:800 38px/1 var(--f-source-sans-3);letter-spacing:-.02em;color:#f50057}
+.gm-tk em span{font:700 12px/1 var(--f-source-sans-3);letter-spacing:.1em;color:#fff}
+.gm-tk small{font:500 10px/1 var(--f-source-sans-3);letter-spacing:.2em;color:#bdbdc2}
+.gm-tk i{align-self:stretch;width:1px;margin:2px 0;background:rgba(255,255,255,.18)}
+.gm-tk-r{flex:1;display:flex;flex-direction:column;gap:7px;padding-left:14px}
+.gm-tk-r span{font:400 12px/1.2 var(--f-source-sans-3);color:#bdbdc2}
+.gm-tk-r b{font-weight:700;color:#fff}
+.sales .gm-shop{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:18px}
+/* confetti: pops out from behind the ticket, then drifts gently */
+.gm-cf,.gm-fl{transform-box:fill-box;transform-origin:center}
+.gm-cf{opacity:0;animation:gm-cf-pop .75s cubic-bezier(.15,.85,.3,1) var(--d,0s) forwards}
+.gm-fl{animation:gm-cf-float 2.6s ease-in-out calc(.9s + var(--fl,0s)) infinite alternate}
+@keyframes gm-cf-pop{0%{opacity:0;transform:translate(var(--fx),var(--fy)) scale(.2) rotate(-140deg)}45%{opacity:1}75%{transform:translate(calc(var(--fx) * -.06),calc(var(--fy) * -.06)) scale(1.18) rotate(12deg)}100%{opacity:1;transform:none}}
+@keyframes gm-cf-float{from{transform:translateY(0) rotate(0)}to{transform:translateY(-4px) rotate(8deg)}}
+@media (prefers-reduced-motion:reduce){.gm-cf{opacity:1;animation:none}.gm-fl{animation:none}}
+
+/* won state of the banner: ticket icon with the exact offer, tick pill */
+.sales .dc-ok{display:flex;align-items:center;gap:9px;width:max-content;max-width:100%;margin-top:20px;padding:7px 14px 7px 8px;border-radius:4px;background:rgba(74,22,42,.55);font:500 9px/1.2 var(--f-source-sans-3);letter-spacing:.2em;text-transform:uppercase;color:#e2d6d9}
+.dc-tick{flex:0 0 auto;width:18px;height:18px;border-radius:50%;background:#f50057;display:flex;align-items:center;justify-content:center}
+/* won banner: deeper maroon, closer to the reference */
+.dc-play.won{background:radial-gradient(80% 70% at 50% 0%,rgba(130,32,70,.45),transparent 70%),linear-gradient(180deg,rgba(70,20,39,.7),rgba(24,9,13,.96));border-color:rgba(245,0,87,.2)}
+.dc-play.won h3 i{font-style:normal;font-weight:700;color:#f50057}
+
+/* score to win: one column per cart tier; the tier the cart qualifies for is the bright one */
+.gm-el{margin-top:32px;text-align:left}
+.gm-el>small{display:block;font:700 9px/1 var(--f-source-sans-3);letter-spacing:.24em;color:var(--dim)}
+.sales .gm-el-line{margin:14px 0 0;text-align:center;font:400 14px/1.3 var(--f-source-sans-3);color:#e0e0e0}
+.gm-el-line b{font-weight:700;color:#f50057}
+.gm-tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:2px;margin-top:14px}
+.gm-tiers>div{display:flex;flex-direction:column;align-items:center;gap:8px;padding:2px 2px}
+.gm-tiers>div+div{border-left:1px solid rgba(255,255,255,.12)}
+.gm-tiers em{display:flex;align-items:baseline;gap:3px;font-style:normal;white-space:nowrap}
+.gm-tiers b{font:800 20px/1 var(--f-source-sans-3);letter-spacing:-.02em;color:#fff}
+.gm-tiers i b{font:700 11px/1 var(--f-source-sans-3);letter-spacing:0;color:#fff}
+.gm-tiers em span{font:700 9px/1 var(--f-source-sans-3);letter-spacing:.1em;color:#fff}
+.gm-tiers i{font:400 11px/1 var(--f-source-sans-3);font-style:normal;color:#e0e0e0;padding:7px 6px;border-radius:999px;background:rgba(255,255,255,.08);white-space:nowrap}
+.sales .gm-btn:disabled{background:rgba(255,255,255,.14);color:#8a8a8e;cursor:default}
+
+
+/* copy-code (unlocked coupon): in the win ticket (.gm) and in the won banner pill (.bn) */
+.sales .cc{display:flex;text-align:left;color:#fff;cursor:pointer}
+.sales .cc b{font-family:var(--f-source-sans-3)}
+/* win ticket: "Use code" + dashed pill with the code and the copy icon 2px after it */
+.sales .cc.gm{flex-direction:row;align-items:center;gap:12px;white-space:nowrap}
+.sales .cc.gm em{font:600 13px/1.2 var(--f-source-sans-3);font-style:normal;color:#e8e0e2}
+.sales .cc.gm .cc-pill{display:inline-flex;align-items:center;gap:2px;height:30px;padding:0 8px;border:1px dashed rgba(245,0,87,.75);border-radius:4px;background:rgba(245,0,87,.08);color:#f50057}
+.sales .cc.gm .cc-pill b{font-size:12px;font-weight:800;line-height:1;letter-spacing:.06em;color:#f50057}
+.sales .cc.bn{align-items:center;gap:10px;letter-spacing:0;text-transform:none}
+.sales .cc.bn b{font-size:12px;font-weight:800;letter-spacing:.1em}
+.sales .cc.bn span{display:inline-flex;align-items:center;gap:5px;padding-left:10px;border-left:1px solid rgba(255,255,255,.2);font:700 10px/1 var(--f-source-sans-3);letter-spacing:.1em;text-transform:uppercase;color:#ff9ac1}
+.sales .cc.bn.on span{color:#fff}
+
+/* won banner: same "Use code:" + dashed code pill as the win ticket */
+.sales .dc-code{margin-top:16px}
+.sales .dc-code .cc.gm em{font-size:13px}
+.sales .dc-code>span{display:block;margin-top:8px;font:400 12px/1.2 var(--f-source-sans-3);color:#bdbdc2}
+
+.gm-tiers .gm-lk{display:block;height:24px;width:auto}

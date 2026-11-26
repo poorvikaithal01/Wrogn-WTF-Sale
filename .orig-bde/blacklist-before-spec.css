@@ -1,0 +1,10 @@
+/* Blacklist banner (bl-): dark to red, coin on the right. Sits inside .sales. */
+.bl{position:relative;margin:0 16px;height:156px;border-radius:4px;overflow:hidden;border:1px solid rgba(245,0,87,.25);background:radial-gradient(75% 120% at 82% 38%,rgba(245,0,87,.42),rgba(245,0,87,.12) 55%,transparent 80%),linear-gradient(135deg,#14060d,#3a0a22)}
+.bl-coin{position:absolute;right:0;top:0;height:100%;width:auto;max-width:none;pointer-events:none}
+.bl-t{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;height:100%;box-sizing:border-box;padding:20px 0 0 18px}
+.bl-t small{font:600 10px/1 var(--f-source-sans-3);letter-spacing:.24em;color:#fff}
+.bl-t small i{font-style:normal;color:#fff}
+.sales .bl-t h3{margin:10px 0 0;font:700 20px/1.1 var(--font-display);font-variant-numeric:lining-nums;color:#fff;white-space:nowrap}
+.bl-t h3 i{font-style:normal;color:#fff}
+.sales .bl-t p{margin:6px 0 0;font:400 13px/1.2 var(--f-source-sans-3);color:rgba(255,255,255,.9)}
+.sales .bl-btn{margin-top:auto;margin-bottom:18px;height:38px;padding:0 20px;border-radius:4px;background:#fff;color:#111;font:700 11px/1 var(--f-source-sans-3);letter-spacing:.14em;text-transform:uppercase}

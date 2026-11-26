@@ -1,0 +1,42 @@
+/* Sale film: deep maroon, soft arcs and faint light streaks, Source Sans 3 + Playfair Display. One page. Prefix sf-. */
+.sf-wrap{position:absolute;inset:0;z-index:60;background:#121212;pointer-events:none}
+.sf{position:absolute;inset:0;overflow:hidden;color:#fff;font-family:var(--f-source-sans-3);text-transform:uppercase;display:flex;align-items:center;justify-content:center;
+  background:#121212}
+/* entrance: a soft fade with a short upward move */
+.rise{animation:sf-rise .65s cubic-bezier(.2,.6,.2,1) var(--d,0s) both}
+@keyframes sf-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+/* faint light streaks in the corners, static */
+.sf-streak{position:absolute;display:block;height:1px;width:190px;background:linear-gradient(90deg,transparent,rgba(204,15,92,.75),transparent);opacity:.5}
+.sf-streak.a{right:-60px;top:112px;transform:rotate(36deg)}
+.sf-streak.b{left:-90px;top:50%;transform:rotate(-30deg);width:210px;opacity:.38}
+.sf-streak.c{left:-70px;bottom:46px;transform:rotate(34deg);opacity:.38}
+/* sparkles breathe slowly (no flash) */
+.sf-star{position:absolute;opacity:.3;animation:sf-twinkle 3.6s ease-in-out var(--d,0s) infinite alternate}
+@keyframes sf-twinkle{from{opacity:.18;transform:scale(.92)}to{opacity:.42;transform:scale(1.05)}}
+.sf.still .rise,.sf.still .sf-star{animation:none}
+.sf-brand{position:absolute;left:0;right:0;top:calc(54px + var(--sb));display:flex;flex-direction:column;align-items:center;gap:9px}
+.sf-brand span{font:700 11px/1 var(--f-source-sans-3);letter-spacing:.5em;padding-left:.5em}
+.sf-page{position:relative;display:flex;flex-direction:column;align-items:center;padding-top:44px;width:100%}
+.sf-label{font:600 13px/1 var(--f-source-sans-3);letter-spacing:.4em;padding-left:.4em;color:#CC0F5C}
+/* the divider draws outward from the star while the page "loads" */
+.sf-div{display:flex;align-items:center;gap:10px;width:250px;margin-top:14px}
+.sf-div u{flex:1;height:1px;background:linear-gradient(90deg,transparent,#CC0F5C);transform:scaleX(0);animation:sf-draw 1.9s cubic-bezier(.45,0,.25,1) .45s forwards}
+.sf-div u:first-child{transform-origin:100% 50%}
+.sf-div u:last-child{background:linear-gradient(270deg,transparent,#CC0F5C);transform-origin:0 50%}
+@keyframes sf-draw{to{transform:scaleX(1)}}
+.sf.still .sf-div u{animation:none;transform:none}
+.sf-up{margin-top:22px;font:700 14px/1 var(--f-source-sans-3);letter-spacing:.4em;padding-left:.4em;color:#fff}
+/* hero: 70% in Playfair, solid pink */
+.sf-hero{display:flex;align-items:flex-end;margin-top:6px}
+.sf-n{font:800 156px/1 var(--font-display);font-variant-numeric:lining-nums;font-feature-settings:'lnum' 1;letter-spacing:-.03em;text-transform:none;color:#CC0F5C}
+.sf-pc{font:800 68px/1 var(--font-display);font-style:normal;margin:0 0 20px 4px;color:#CC0F5C}
+.sf-off{margin-top:2px;font:800 34px/1 var(--f-source-sans-3);letter-spacing:.5em;padding-left:.5em}
+.sf-cards{display:flex;gap:10px;margin-top:34px;min-height:96px}
+.sf-card{width:96px;height:96px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;border-radius:4px;border:1px solid rgba(204,15,92,.5);background:rgba(0,0,0,.55)}
+.sf-card b{font:800 22px/1 var(--f-source-sans-3);letter-spacing:-.01em}
+.sf-card span{font:500 7.5px/1.25 var(--f-source-sans-3);letter-spacing:.18em;color:rgba(255,255,255,.82);text-align:center;padding:0 6px}
+.sf-dates{display:flex;align-items:center;gap:12px;width:300px;margin-top:30px}
+.sf-dates u{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(204,15,92,.7))}
+.sf-dates u:last-child{background:linear-gradient(270deg,transparent,rgba(204,15,92,.7))}
+.sf-dates span{font:500 11px/1 var(--f-source-sans-3);letter-spacing:.3em;color:rgba(255,255,255,.78);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){.rise,.sf-star{animation:none}.sf-div u{animation:none;transform:none}}

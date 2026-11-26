@@ -1,0 +1,15 @@
+/* Sale homepage shell: screen, bottom nav, status bar, hero logo. */
+.screen{position:absolute;inset:0;background:var(--bg-page);overflow:hidden}
+.home-bottom{position:absolute;left:0;bottom:0;width:360px;height:calc(67px + var(--sab,0px))}
+.home-widget{position:absolute;left:148.5px;top:-18.6px;width:70.4px;height:73.6px}
+.bnav{width:360px;height:calc(67px + var(--sab,0px));background:#fff}
+.bnav-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0 12px;width:360px;height:67px}
+.bnav-item{display:flex;flex-direction:column;align-items:center;gap:6px}
+.bnav-item span{font-family:var(--f-tt-commons-pro);font-weight:600;font-size:10px;line-height:130%;letter-spacing:1px;color:#71757a}
+.bnav-slot{width:64px;flex-shrink:0}
+.statusbar{position:absolute;left:0;top:0;width:360px;height:44px;pointer-events:none;z-index:5}
+.sb-icons{position:absolute;left:280px;top:16px;width:66px;height:12px}
+.sb-time{position:absolute;left:34px;top:18px;height:17px;display:flex;align-items:center;gap:4px;font-family:var(--f-sf-pro-display);font-weight:500;font-size:14px;color:#f5f5f5}
+.sb-time i{display:block;width:12px;height:12px}
+.home .sb-time,.home .sb-icons{filter:none}
+.hv-logo{position:absolute;left:22.7px;top:calc(17.8px + var(--sb));width:26.7px;height:auto;display:block}

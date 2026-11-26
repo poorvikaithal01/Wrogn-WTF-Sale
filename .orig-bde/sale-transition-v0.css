@@ -1,0 +1,46 @@
+/* Sale film: deep maroon, soft arcs and faint light streaks, Source Sans 3 + Playfair Display. One page. Prefix sf-. */
+.sf-wrap{position:absolute;inset:0;z-index:60;background:#2c0916;pointer-events:none}
+.sf{position:absolute;inset:0;overflow:hidden;color:#fff;font-family:var(--f-source-sans-3);text-transform:uppercase;display:flex;align-items:center;justify-content:center;
+  background:
+    radial-gradient(70% 38% at 100% 0%,rgba(150,32,77,.42),transparent 70%),
+    radial-gradient(90% 55% at -25% 40%,rgba(120,26,62,.38),transparent 62%),
+    radial-gradient(80% 45% at 125% 108%,rgba(110,24,57,.4),transparent 62%),
+    linear-gradient(180deg,#4a0f26 0%,#2c0916 52%,#230712 100%)}
+/* entrance: a soft fade with a short upward move */
+.rise{animation:sf-rise .65s cubic-bezier(.2,.6,.2,1) var(--d,0s) both}
+@keyframes sf-rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+/* faint light streaks in the corners, static */
+.sf-streak{position:absolute;display:block;height:1px;width:190px;background:linear-gradient(90deg,transparent,rgba(245,0,87,.75),transparent);opacity:.5}
+.sf-streak.a{right:-60px;top:112px;transform:rotate(36deg)}
+.sf-streak.b{left:-90px;top:50%;transform:rotate(-30deg);width:210px;opacity:.38}
+.sf-streak.c{left:-70px;bottom:46px;transform:rotate(34deg);opacity:.38}
+/* sparkles breathe slowly (no flash) */
+.sf-star{position:absolute;opacity:.3;animation:sf-twinkle 3.6s ease-in-out var(--d,0s) infinite alternate}
+@keyframes sf-twinkle{from{opacity:.18;transform:scale(.92)}to{opacity:.42;transform:scale(1.05)}}
+.sf.still .rise,.sf.still .sf-star{animation:none}
+.sf-brand{position:absolute;left:0;right:0;top:calc(54px + var(--sb));display:flex;flex-direction:column;align-items:center;gap:9px}
+.sf-brand span{font:700 11px/1 var(--f-source-sans-3);letter-spacing:.5em;padding-left:.5em}
+.sf-page{position:relative;display:flex;flex-direction:column;align-items:center;padding-top:44px;width:100%}
+.sf-label{font:600 13px/1 var(--f-source-sans-3);letter-spacing:.4em;padding-left:.4em;color:#f50057}
+/* the divider draws outward from the star while the page "loads" */
+.sf-div{display:flex;align-items:center;gap:10px;width:250px;margin-top:14px}
+.sf-div u{flex:1;height:1px;background:linear-gradient(90deg,transparent,#f50057);transform:scaleX(0);animation:sf-draw 1.9s cubic-bezier(.45,0,.25,1) .45s forwards}
+.sf-div u:first-child{transform-origin:100% 50%}
+.sf-div u:last-child{background:linear-gradient(270deg,transparent,#f50057);transform-origin:0 50%}
+@keyframes sf-draw{to{transform:scaleX(1)}}
+.sf.still .sf-div u{animation:none;transform:none}
+.sf-up{margin-top:22px;font:700 14px/1 var(--f-source-sans-3);letter-spacing:.4em;padding-left:.4em;color:#fff}
+/* hero: 70% in Playfair, soft white-to-pink */
+.sf-hero{display:flex;align-items:flex-end;margin-top:6px}
+.sf-n{font:800 156px/1 var(--font-display);font-variant-numeric:lining-nums;font-feature-settings:'lnum' 1;letter-spacing:-.03em;text-transform:none;background:linear-gradient(180deg,#fff 15%,#f4b7ce 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sf-pc{font:800 68px/1 var(--font-display);font-style:normal;margin:0 0 20px 4px;background:linear-gradient(180deg,#fff 15%,#f4b7ce 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sf-off{margin-top:2px;font:800 34px/1 var(--f-source-sans-3);letter-spacing:.5em;padding-left:.5em}
+.sf-cards{display:flex;gap:10px;margin-top:34px;min-height:96px}
+.sf-card{width:96px;height:96px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;border-radius:4px;border:1px solid rgba(245,0,87,.5);background:rgba(34,6,12,.55)}
+.sf-card b{font:800 22px/1 var(--f-source-sans-3);letter-spacing:-.01em}
+.sf-card span{font:500 7.5px/1.25 var(--f-source-sans-3);letter-spacing:.18em;color:rgba(255,255,255,.82);text-align:center;padding:0 6px}
+.sf-dates{display:flex;align-items:center;gap:12px;width:300px;margin-top:30px}
+.sf-dates u{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(245,0,87,.7))}
+.sf-dates u:last-child{background:linear-gradient(270deg,transparent,rgba(245,0,87,.7))}
+.sf-dates span{font:500 11px/1 var(--f-source-sans-3);letter-spacing:.3em;color:rgba(255,255,255,.78);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){.rise,.sf-star{animation:none}.sf-div u{animation:none;transform:none}}

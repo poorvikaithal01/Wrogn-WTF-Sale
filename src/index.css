@@ -1,0 +1,20 @@
+@import './styles/fonts.css';
+@import './styles/tokens.css';
+*{box-sizing:border-box}
+:root{--sab:calc(env(safe-area-inset-bottom,0px) / var(--s,1))}
+html,body,#root{height:100%;margin:0}
+body{background:var(--bg-desktop);color:var(--text);font-family:var(--font-body);-webkit-font-smoothing:antialiased;overscroll-behavior:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+/* Centered 360px mobile column on a neutral desktop background. Not stretched. */
+.stage{min-height:100%;display:flex;justify-content:center;align-items:flex-start}
+.phone{position:relative;width:var(--app-w);height:100dvh;max-height:var(--app-h);background:var(--bg-page);overflow:hidden}
+@media (min-width:460px){.stage{align-items:center}.phone{height:var(--app-h);max-height:100dvh;box-shadow:0 0 0 1px #2a2a2d,0 24px 80px rgba(0,0,0,.5)}}
+/* Phones: the 360px design column is scaled to fill the screen width (--s is set in App.tsx), and its height follows the
+   visible viewport (dynamic vh, so Safari's collapsing toolbar is respected) instead of being a fixed 800px frame. */
+@media (max-width:459px){
+  .stage{display:block;height:100vh;height:100dvh;overflow:hidden}
+  .phone{height:calc(100vh / var(--s,1));height:calc(100dvh / var(--s,1));max-height:none;transform:scale(var(--s,1));transform-origin:0 0}
+}
+.scroll{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.abs{position:absolute}

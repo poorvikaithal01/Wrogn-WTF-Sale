@@ -1,0 +1,10 @@
+:root {
+  --bg-page: #0a0a0a;
+  --bg-desktop: #1b1b1d;
+  --text: #ffffff;
+  --text-dim: #e0e0e0;
+  --accent: #ffe85c;
+  --app-w: 360px;
+  --app-h: 800px;
+  --sb: 0px;   /* height of the simulated status bar (44px when SHOW_STATUS_BAR is true) */
+}

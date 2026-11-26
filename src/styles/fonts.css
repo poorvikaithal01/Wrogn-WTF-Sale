@@ -1,0 +1,15 @@
+/*
+ * The sale uses two typefaces only: Source Sans 3 (body, UI, numbers) and Playfair Display (headings, italics).
+ * Both are loaded from Google Fonts in index.html. Legacy variable names from the shared design export all point at the body font.
+ */
+:root {
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Sans 3', system-ui, sans-serif;
+
+  --f-playfair-display: var(--font-display);
+  --f-source-sans-3: var(--font-body);
+  --f-tt-commons-pro: var(--font-body);
+  --f-tt-commons-pro-trl-cmp: var(--font-body);
+  --f-sf-pro-display: var(--font-body);
+  --f-sf-pro: var(--font-body);
+}
