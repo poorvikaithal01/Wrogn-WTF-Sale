@@ -90,7 +90,7 @@ function drawBag(c: CanvasRenderingContext2D, x: number, y: number) {
   c.beginPath(); c.moveTo(-12, -18); c.bezierCurveTo(-12, -36, 12, -36, 12, -18)
   c.strokeStyle = '#f50057'; c.lineWidth = 2.6; c.lineCap = 'round'; c.stroke()
   c.beginPath(); c.moveTo(-30, -18); c.lineTo(30, -18); c.lineTo(26, 26); c.lineTo(-26, 26); c.closePath()
-  const g = c.createLinearGradient(0, -18, 0, 26); g.addColorStop(0, '#2a2a2d'); g.addColorStop(1, '#0c0c0d')
+  const g = c.createLinearGradient(0, -18, 0, 26); g.addColorStop(0, '#f50057'); g.addColorStop(1, '#f50057')
   c.fillStyle = g; c.fill(); c.strokeStyle = 'rgba(255,255,255,.9)'; c.lineWidth = 1.5; c.lineJoin = 'round'; c.stroke()
   c.translate(-10.5, -3); c.scale(.22, .22); c.fillStyle = '#fff'; c.fill(LOGO)
   c.restore()
@@ -111,11 +111,10 @@ type Phase = 'intro' | 'play' | 'result'
 
 function Sheet({ cart, onStart, onDone, onClose }: { cart: number; onStart: () => void; onDone: (rung: number) => void; onClose: () => void }) {
   const [open, setOpen] = useState(false)
-  const GM = new URLSearchParams(location.search).get('gm') // TEMP-DEBUG
-  const [phase, setPhase] = useState<Phase>(GM === 'won' || GM === 'lost' ? 'result' : GM === 'count' ? 'play' : 'intro')
+  const [phase, setPhase] = useState<Phase>('intro')
   const [count, setCount] = useState(3)
   const [score, setScore] = useState(0)
-  const [final, setFinal] = useState(GM === 'won' ? 12 : GM === 'lost' ? 6 : 0)
+  const [final, setFinal] = useState(0)
   const cv = useRef<HTMLCanvasElement>(null)
   const bar = useRef<HTMLDivElement>(null)
   const clock = useRef<HTMLSpanElement>(null)
@@ -132,7 +131,7 @@ function Sheet({ cart, onStart, onDone, onClose }: { cart: number; onStart: () =
 
   // 3, 2, 1 before the drops start
   useEffect(() => {
-    if (phase !== 'play' || count <= 0 || GM === 'count') return // TEMP-DEBUG
+    if (phase !== 'play' || count <= 0) return
     const t = setTimeout(() => setCount(c => c - 1), 650)
     return () => clearTimeout(t)
   }, [phase, count])
@@ -232,7 +231,7 @@ function Sheet({ cart, onStart, onDone, onClose }: { cart: number; onStart: () =
         {phase !== 'play' && <button className="gm-x" onClick={close} aria-label="Close"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#e0e0e0" strokeWidth="1.6" strokeLinecap="round"><path d="M3 3l10 10M13 3L3 13" /></svg></button>}
 
         {phase === 'intro' && <>
-          <small className="gm-eye">BLACK FRIDAY GAME</small>
+          <small className="gm-eye">WROGN THROWAWAY FESTIVAL GAME</small>
           <BdeHead a="Catch the" b="Drops" />
           <p className="gm-lead top">15s to play · Score <b>{GAME_WIN_SCORE} points</b> · Avoid SOLD OUT cards!</p>
           <div className="gm-el">
@@ -267,7 +266,7 @@ function Sheet({ cart, onStart, onDone, onClose }: { cart: number; onStart: () =
         </>}
 
         {phase === 'result' && won && <div className="gm-win">
-          <small className="gm-eye">BLACK FRIDAY GAME</small>
+          <small className="gm-eye">WROGN THROWAWAY FESTIVAL GAME</small>
           <BdeHead a="Catch the" b="Drops" inline />
           <svg className="gm-win-art" viewBox="0 0 220 124" aria-hidden="true">
             <defs><linearGradient id="gmtk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#ffe6da" /><stop offset="1" stopColor="#ff9ac1" /></linearGradient></defs>
@@ -323,13 +322,13 @@ export default function DropsCard() {
   const v = useCart().value
   const [played, setPlayed] = useState(false)   // unlimited tries: after the first round the button reads "Try again"
   const [best, setBest] = useState(0)
-  const [show, setShow] = useState(() => new URLSearchParams(location.search).get('gm') != null) // TEMP-DEBUG
+  const [show, setShow] = useState(false)
   const top = GAME_TIERS[GAME_TIERS.length - 1].n   // the biggest prize
   return (
     <div className="dc">
       <div className={`dc-play${best > 0 ? ' won' : ''}`}>
         <img className="dc-art" src="/img/bag-art.png" alt="" draggable={false} />
-        <small>BLACK FRIDAY GAME</small>
+        <small>WROGN THROWAWAY FESTIVAL GAME</small>
         {best > 0 ? <h3>You won <i>{GAME_TIERS[best - 1].n} off</i></h3> : <h3>Catch the <i>Drops</i></h3>}
         {best > 0 ? <div className="dc-code"><CopyCode code={GAME_TIERS[best - 1].code} className="gm" /><span>{v < GAME_TIERS[best - 1].above ? <>Shop for <b>{inr(GAME_TIERS[best - 1].above - v)}</b> more to apply the coupon in cart.</> : `Apply this code in cart to get ${GAME_TIERS[best - 1].n} off.`}</span></div> : null}
         {best === 0 && <>
