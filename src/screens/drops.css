@@ -1,7 +1,7 @@
 /* Catch the Drops: section card (dc-) and bottom sheet game (gm-). Sits inside .sales. */
 .dc{margin:0 16px}
 .dc-play{position:relative;display:flex;flex-direction:column;padding:18px 16px 16px;border-radius:4px;overflow:hidden;background:radial-gradient(55% 70% at 100% 0%,rgba(245,0,87,.2),transparent 70%),linear-gradient(135deg,#0f0609,#1c0711);border:1px solid rgba(245,0,87,.18)}
-.dc-art{position:absolute;right:10px;top:10px;width:62px;height:auto;pointer-events:none}
+.dc-art{position:absolute;right:12px;top:12px;width:52px;height:auto;pointer-events:none;image-rendering:auto}
 .dc-play>small{font:700 9px/1 var(--f-source-sans-3);letter-spacing:.24em;color:#f50057}
 .sales .dc-play h3{margin:8px 0 0;font:700 22px/1.05 var(--font-display);text-transform:uppercase;letter-spacing:-.01em;color:#fff;white-space:nowrap}
 .dc-play h3 i{color:#F50057}
@@ -82,7 +82,7 @@
 .gm-legend{padding:12px 0 10px;border-radius:4px;background:linear-gradient(135deg,rgba(245,0,87,.18) 0%,rgba(14,8,10,.92) 62%,rgba(8,6,7,.95) 100%);border:1px solid rgba(255,255,255,.1)}
 .gm-legend{margin-top:30px}
 /* result screen: stronger red glow at the top, like the reference */
-.gm-sheet.res{background:radial-gradient(95% 50% at 50% 0%,rgba(245,0,87,.20),transparent 72%),#111113}
+.gm-sheet.res{background:radial-gradient(55% 70% at 100% 0%,rgba(245,0,87,.2),transparent 70%),linear-gradient(135deg,#0f0609,#1c0711);border-top-color:rgba(245,0,87,.18)}
 .sales .gm-sheet.res .gm-lead{margin:16px 0 0}
 /* no attempts left: a quiet pill with a lock */
 
@@ -120,7 +120,7 @@
 .sales .dc-ok{display:flex;align-items:center;gap:9px;width:max-content;max-width:100%;margin-top:20px;padding:7px 14px 7px 8px;border-radius:4px;background:rgba(74,22,42,.55);font:500 9px/1.2 var(--f-source-sans-3);letter-spacing:.2em;text-transform:uppercase;color:#e2d6d9}
 .dc-tick{flex:0 0 auto;width:18px;height:18px;border-radius:50%;background:#f50057;display:flex;align-items:center;justify-content:center}
 /* won banner: deeper maroon, closer to the reference */
-.dc-play.won{background:radial-gradient(80% 70% at 50% 0%,rgba(245,0,87,.22),transparent 70%),linear-gradient(180deg,rgba(70,20,39,.7),rgba(24,9,13,.96));border-color:rgba(245,0,87,.2)}
+.dc-play.won{background:radial-gradient(55% 70% at 100% 0%,rgba(245,0,87,.2),transparent 70%),linear-gradient(135deg,#0f0609,#1c0711);border-color:rgba(245,0,87,.18)}
 .dc-play.won h3 i{font-style:normal;font-weight:700;color:#f50057}
 
 /* score to win: one column per cart tier; the tier the cart qualifies for is the bright one */

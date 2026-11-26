@@ -327,7 +327,7 @@ export default function DropsCard() {
   return (
     <div className="dc">
       <div className={`dc-play${best > 0 ? ' won' : ''}`}>
-        <img className="dc-art" src="/img/bag-art.png" alt="" draggable={false} />
+        <img className="dc-art" src="/img/bag-art.png?v=hd" alt="" draggable={false} />
         <small>WROGN THROWAWAY FESTIVAL GAME</small>
         {best > 0 ? <h3>You won <i>{GAME_TIERS[best - 1].n} off</i></h3> : <h3>Catch the <i>Drops</i></h3>}
         {best > 0 ? <div className="dc-code"><CopyCode code={GAME_TIERS[best - 1].code} className="gm" /><span>{v < GAME_TIERS[best - 1].above ? <>Shop for <b>{inr(GAME_TIERS[best - 1].above - v)}</b> more to apply the coupon in cart.</> : `Apply this code in cart to get ${GAME_TIERS[best - 1].n} off.`}</span></div> : null}
